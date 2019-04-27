@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="studentMapper"> -->
+<mapper namespace="Mapper.StudentMapper">
+
+ <!-- 
+  根据 id 查询 student 表中的数据  id:唯一标识符，此文件中的id值不能重复;resultType:返回值类型，一条数据库记录也就对应实体类的一个对象
+       parameterType:参数类型，也就是查询条件的类型
+  
+  <select id="selectStudentById" resultType="pojo.student" parameterType="int">
+    这里和普通的sql 查询语句差不多，对于只有一个查询条件后面的 #{id}表示占位符，里面不一定要写id,写啥都可以，但是不要空着；如果有多个查询条件，则要写pojo类里面的属性
+    select * from student where id = #{id}
+  </select>
+  查询student表所有数据
+  <select id="getAllStudent" resultType="pojo.student">
+    select * from student
+  </select>
+  根据id更新数据
+  <update id="updateStudentById" parameterType="pojo.student">
+    update student set name=#{name},sex=#{sex},birth=#{birth},classnumber=#{classnumber} where id = #{id}
+  </update>
+  向student 表插入一条数据
+  <insert id="addStudent" parameterType="pojo.student">
+    insert into student(id,name,sex,birth,classnumber) values(#{id},#{name},#{sex},#{birthday},#{classnumber})
+  </insert>
+  根据 id 删除数据
+  <delete id="deleteStudentById" parameterType="int">
+    delete from student where id=#{id}
+  </delete> -->
+</mapper>
