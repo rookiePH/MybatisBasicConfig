@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="studentMapper"> 
+    <select id="getStudents" resultMap="getStudentMap">
+        select * from class c,student s where s.classnumber=c.classnumber
+    </select>
+    <delete id="deleteStudents" parameterType="int">
+        delete from student where id=#{id}
+    </delete>
+    <resultMap type="pojo.student" id="getStudentMap">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"/>
+        <result column="sex" property="sex"/>
+        <result column="classnumber" property="classnumber"/>
+        <result column="birth" property="birthday"/>
+        <association property="c" javaType="pojo.classes">
+            <id column="classnumber" property="classnumber"/>
+            <result column="classname" property="classname"/>
+        </association>
+    </resultMap>
+ 
+</mapper>
